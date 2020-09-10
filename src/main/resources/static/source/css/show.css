@@ -1,0 +1,47 @@
+body{
+    background: url("../image/bg.jpg");
+}
+.am-topbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+    border-radius: 50%;
+}
+.kyx-art{
+    box-shadow: 0px 0px 10px 0.5px #301515;
+    margin-top: 5%;
+}
+.kyx-article-top .article-top{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-family: fangsong;
+}
+
+.kyx-article-top .article-info{
+    text-align: center;
+}
+.article-comment{
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0.5px #301515;
+    background-color: #CCCCCC;
+    padding-top: 20px;
+}
+.comment{
+    border-radius: 5px;
+    background-color: white;
+    margin-left: 180px;
+    margin-top: 20px;
+    width: 800px;
+    height: 200px;
+    border: 1px solid #00FFFF;
+}
+.comment p{
+    margin-top: 10%;
+    font-size: 30px;
+    font-family: monospace
+}

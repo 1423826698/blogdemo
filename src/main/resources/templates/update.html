@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>更新</title>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <style>
+        body{
+            background-color: #dddddd;
+            background: url("../image/bg.jpg");
+        }
+        .am-topbar-brand img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 4px;
+            border-radius: 50%;
+        }
+
+        .kyx-update{
+            margin-top: 20px;
+            text-align: center;
+            font-size: 23px;
+            color: rgba(7, 38, 41, 0.5);
+        }
+        .log{
+            margin-top: 8%;
+            font-size: 25px;
+            margin-bottom: 8%;
+        }
+        .kyx-ul-li{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div th:replace="header::header">
+    </div>
+    <div class="am-container">
+        <div class="kyx-center">
+            <div class="kyx-center-div">
+                <div class="kyx-update am-kai">
+                    の博客终于要开张了，欢迎大家光临！！！
+                </div>
+                <div class="am-kai log am-animation-slide-left">
+                    <span class="am-icon-bell-o"></span>
+                    博客更新日志
+                </div>
+                <div class="kyx-updatelog am-animation-slide-right">
+                    <ul class="layui-timeline">
+                        <li class="layui-timeline-item kyx-ul-li ">
+                            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2020年7月15日</h3>
+                                <p class="am-serif">开始搭建网站
+
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="layui-timeline">
+                        <li class="layui-timeline-item kyx-ul-li ">
+                            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2020年9月10日</h3>
+                                <p class="am-serif">部署成功
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <br><br><br><br><br><br><br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

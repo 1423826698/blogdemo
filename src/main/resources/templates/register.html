@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link href="source/css/register.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="source/js/register.js"></script>
+</head>
+<body>
+<div th:replace="header::header"></div>
+<div class="form-con">
+    <h4>欢迎来た 没人要的程序员の博客，请注册</h4>
+    <form>
+        <div class="form-box">
+            <input type="email" id="qqEmail"  placeholder="请输入QQ邮箱">
+        </div>
+        <div class="form-box">
+            <input type="password" id="blogPassword" placeholder="请输入密码(6~16位字符)">
+        </div>
+        <div class="form-box">
+            <input type="text" id="blogVeCode" placeholder="请输入验证码">
+        </div>
+        <div class=form-box>
+            <button type="button" class="register">注册</button>
+            <button type="button" class="get-code">获取验证码</button>
+        </div>
+
+    </form>
+</div>
+<div class="am-g">
+    <div class="notice-box notice-box-email">
+        <i class="am-icon-exclamation"></i>
+        <span>QQ邮箱格式错误</span>
+    </div>
+    <div class="notice-box notice-box-password">
+        <i class="am-icon-exclamation"></i>
+        <span>密码不符合要求</span>
+    </div>
+    <div class="notice-box notice-box-vercode">
+        <i class="am-icon-exclamation"></i>
+        <span>验证码错误</span>
+    </div>
+</div>
+</body>
+</html>

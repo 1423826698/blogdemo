@@ -1,0 +1,62 @@
+body{
+   background-color: #dddddd!important;
+    background: url("../image/bg.jpg");
+}
+.am-topbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+    border-radius: 50%;
+}
+
+.form-con{
+    width: 400px;
+    background-color: white;
+    margin:200px auto;
+    padding: 30px;
+    border-radius: 9px;
+    box-shadow: 0 8px 20px rgba(146, 146, 146, 0);
+
+}
+.form-box{
+    margin-top: 30px;
+}
+.form-box input{
+    width: 100%;
+    padding: 0 15px 0 15px;
+    border-radius: 5px;
+    border: 1px solid#dddddd;
+
+}
+
+input:focus{
+    border:1px solid #00FFFF;
+    box-shadow: 0 0 15px #00FFFF;
+    outline:none;
+}
+.form-box button{
+    width: 40%;
+    border-radius: 1px;
+    background-color: #1890ff;
+    border-color: #1890ff;
+    color: white;
+    float: left;
+    margin-left:6%;
+    margin-top: -10px;
+}
+button:focus{
+    outline: none;
+}
+.notice-box{
+    position: fixed;
+    bottom: 56px;
+    left: 43%;
+    padding: 16px 40px;
+    color: red;
+    background-color: rgba(63,63,63,0.9);
+    opacity: 0.7;
+    border-radius: 5px;
+    line-height: 24px;
+    font-size: 16px;
+    display: none;
+}

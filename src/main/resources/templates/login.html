@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登入</title>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="source/js/login.js"></script>
+    <style type="text/css">
+
+        body{
+            background-color: #dddddd!important;
+            background: url("../image/bg.jpg");
+        }
+        .am-topbar-brand img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 4px;
+            border-radius: 50%;
+        }
+
+        .form-con{
+            width: 400px;
+            background-color: white;
+            margin:200px auto;
+            padding: 30px;
+            border-radius: 9px;
+            box-shadow: 0 8px 20px rgba(146, 146, 146, 0);
+
+        }
+        .form-box{
+            margin-top: 30px;
+        }
+        .form-box input{
+            width: 100%;
+            padding: 0 15px 0 15px;
+            border-radius: 5px;
+            border: 1px solid#dddddd;
+
+        }
+
+        input:focus{
+            border:1px solid #00FFFF;
+            box-shadow: 0 0 15px #00FFFF;
+            outline:none;
+        }
+        .form-box button{
+            width: 40%;
+            border-radius: 1px;
+            background-color: #1890ff;
+            border-color: #1890ff;
+            color: white;
+            float: left;
+            margin-left:29%;
+            margin-top: -10px;
+        }
+        button:focus{
+            outline: none;
+        }
+        .notice-box{
+            position: fixed;
+            bottom: 56px;
+            left: 43%;
+            padding: 16px 40px;
+            color: red;
+            background-color: rgba(63,63,63,0.9);
+            opacity: 0.7;
+            border-radius: 5px;
+            line-height: 24px;
+            font-size: 16px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div th:replace="header::header"></div>
+<div class="form-con">
+    <h4>欢迎来た 没人要的程序员の博客，请登入</h4>
+    <form>
+        <div class="form-box">
+            <input type="email" id="qqEmail"  placeholder="请输入QQ邮箱">
+        </div>
+        <div class="form-box">
+            <input type="password" id="blogPassword" placeholder="请输入密码(6~16位字符)">
+        </div>
+
+        <div class=form-box>
+            <button type="button" class="register">登入</button>
+        </div>
+
+    </form>
+</div>
+<div class="am-g">
+    <div class="notice-box notice-box-email">
+        <i class="am-icon-exclamation"></i>
+        <span>QQ邮箱格式错误</span>
+    </div>
+    <div class="notice-box notice-box-password">
+        <i class="am-icon-exclamation"></i>
+        <span>密码不符合要求</span>
+    </div>
+</div>
+</body>
+</html>

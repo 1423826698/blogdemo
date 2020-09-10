@@ -1,0 +1,180 @@
+*{
+    font-family: Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
+}
+body{
+    background: url("../image/bg.jpg");
+}
+.am-topbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+    border-radius: 50%;
+}
+.motival {
+    background: rgba(255, 250, 240, 0.5);
+    box-shadow: 0px 0px 10px 0.5px #aaa;
+}
+
+.kyx-right{
+    width: 80%;
+    margin-left: 20px;
+}
+.kyx-right ul li >img{
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    /*margin-left: 25%;*/
+}
+.kyx-right ul li>a{
+    margin-right:20px ;
+    margin-left: 20px;
+}
+.user-info{
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid silver;
+    box-shadow: 0 2px 5px 0 rgba(33, 22, 22, 0.2), 0 2px 10px 0 rgba(0,0,0,0.12);
+    margin-top: 20px;
+}
+.kyx-session-content{
+
+}
+.img{
+    height: 157px;
+    border: 1px solid #f6f6f6;
+    overflow: hidden;
+    margin-top:10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.img img{
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+.kyx-center{
+    margin: 10px 10px;
+}
+.content{
+    border-radius: 5px;
+    box-shadow:3px 2px 8px #aaa ;
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    transition: all 1s;
+}
+.content:hover{
+    box-shadow:3px 2px 8px #a555e2;
+
+}
+.content:hover .img img{
+    transform: scale(1.5);
+}
+.kyx-article-title{
+    font-size: 2.8rem;
+    line-height: 1.15;
+    font-weight: normal;
+    text-align: center;
+    display: block;
+}
+.article-entry{
+    margin-top: 10px;
+}
+.article-entry p{
+    width: 94%;
+    margin: 0 auto;
+    text-indent: 6%;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: #5e5f62;
+}
+.kyx-footer{
+    padding: 0 20px
+}
+.kyx-footer span{
+    margin-right: 10px;
+    color: #0b76ac;
+}
+.kyx-footer a{
+    float: right;
+}
+
+.label-cloud{
+    border-radius: 10px;
+    box-shadow: 3px 2px 8px #c2b8c7;
+    margin-top: 20px;
+}
+.blog-tag{
+    display: inline-block;
+    font-size: 16px;
+    color: #c7bb66;
+    line-height: 20px;
+}
+.blog-tag:hover{
+    text-decoration: underline;
+}
+.kyx-label{
+    padding: 10px;
+}
+.kyx-icon{
+    background-image: url("../image/background.jpg") ;
+    min-height: 200px;
+    background-position: 50%!important;
+    background-size: cover!important;
+    opacity: 1!important;
+    padding-top: 15px!important;
+    box-shadow: 0 10px 20px rgba(15, 9, 9, 0.9)
+}
+.bottom-level{
+    z-index: 0;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(30, 93, 91, 0.5);
+    margin-top: 85px;
+}
+.kyx-list{
+    border: 1px solid #fafafa;
+    box-shadow: 2px 2px 8px #c2b8c7;
+    border-radius: 5px;
+    margin: 20px;
+}
+.site-default{
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.site-default li{
+    margin-left: 4%;
+}
+.widget{
+    background-color: #f2dede;
+    margin-left: 15px;
+    padding: 15px 15px;
+    line-height: 1.6em;
+    word-wrap: break-word;
+    font-size: 0.9em;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+}
+.myCardBtn{
+    margin: 10px;
+}
+.halving-line{
+    margin-top: 30px;
+    color: #CCCCCC;
+}
+.halving-line-words{
+    margin-top: 20px;
+    color: #00FFFF;
+    text-align: center;
+}
+.qq_code{
+    width: 150px;
+    height: 150px;
+    //margin-left: 40px;
+}
+.weixin_code{
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    //margin-left: 40px;
+}

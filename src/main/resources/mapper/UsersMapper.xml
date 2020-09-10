@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kyx.blog.mapper.UsersMapper">
+    <resultMap id="userMap" type="Users">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="password" column="password"></result>
+        <result property="roleId" column="roleId"></result>
+        <collection property="roles" ofType="Roles">
+            <id property="rid" column="rid"></id>
+            <result property="rname" column="rname"></result>
+            <collection property="permissionsSet" ofType="Permission">
+                <id property="pid" column="pid"></id>
+                <result property="pname" column="pname"></result>
+                <result property="url" column="url"></result>
+            </collection>
+        </collection>
+    </resultMap>
+    <select id="findByName" parameterType="String" resultMap="userMap">
+        select u.*,r.*,p.*
+        from users u
+        inner join roles r on u.role_id =r.rid
+        inner join permission_role pr on pr.rid =r.rid
+        inner join permission p on pr.pid =p.pid
+        where u.username = #{arg0}
+    </select>
+
+</mapper>

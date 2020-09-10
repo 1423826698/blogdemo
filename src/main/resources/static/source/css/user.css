@@ -1,0 +1,43 @@
+body{
+    background-color: #dddddd;
+    background: url("../image/bg.jpg");
+}
+.am-topbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+    border-radius: 50%;
+}
+ul .c{
+    background-color: #a6e1ec;
+}
+.msg-type{
+    display: inline-block;
+    height: 20px;
+    line-height: 18px;
+    padding: 0 5px;
+    color: #4d4d4d;
+    font-size: 12px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    vertical-align: top;
+}
+.msg-title{
+    width: 80%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    color: #4d4d4d;
+    line-height: 18px;
+    margin-top: -15px;
+}
+.is-read{
+    outline: none;
+    border-radius: 5px;
+}
+.data-me{
+    cursor: pointer;
+}

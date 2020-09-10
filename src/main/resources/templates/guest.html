@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>留言</title>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="source/css/guest.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <script src="layui/layui.js"></script>
+    <script src="live2d/live2d.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="live2d/waifu.css">
+    <script src="source/js/guest.js"></script>
+</head>
+<body>
+<div th:replace="header::header"></div>
+    
+<div class="am-container">
+    <div class="guest" >
+
+        <div class="kyx-comment">
+                    <textarea id="desc" class="comment-top" placeholder="客官可以留言提出意见哦(⊙o⊙)？"></textarea>
+
+        </div>
+        <button class="submit-comment"><i class="am-icon-edit"></i>发表</button>
+        <div class="article-comment-title">
+            <span class="article-comment-word">留言</span>
+            <div class="article-comment-line"></div>
+        </div>
+
+        <!--留言列表-->
+        <div class="visitorComment">
+            <ul class="am-comments-list">
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div th:replace="dem2::live2d"></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kyx.blog.mapper.GuestMapper">
+    <resultMap id="all" type="Guest">
+        <id column="id" property="id"></id>
+        <result column="user_id" property="userId"></result>
+        <result column="message" property="message"></result>
+        <result column="create_time" property="createTime"></result>
+        <result column="is_read" property="isRead"></result>
+        <result column="author_name" property="authorName"></result>
+
+        <collection property="reportCommentSet" ofType="Repguest">
+            <id column="rid" property="rid"></id>
+            <result column="guest_id" property="guestId"></result>
+            <result column="rep_mess" property="repMess"></result>
+            <result column="rguest_id" property="rguestId"></result>
+            <result column="rcreate_time" property="rcreateTime"></result>
+            <result column="ris_read" property="risRead"></result>
+            <result column="rep_name" property="repName"></result>
+            <result column="guest_name" property="guestName"></result>
+        </collection>
+    </resultMap>
+
+    <select id="allGuest" resultMap="all">
+    select g.*, r.*
+    from guest g left join repguest r on g.id = r.guest_id
+    order by g.id desc
+    </select>
+</mapper>

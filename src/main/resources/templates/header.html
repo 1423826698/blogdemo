@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<body>
+<div th:fragment="header">
+
+<div class="header kyx-icon">
+    <div class="am-topbar " style="margin-bottom: 0; background: none;border: none" >
+        <h1 class="am-topbar-brand">
+            <a href="#" class="am-kai"><img src="source/image/tx.jpg">没人要的程序员の博客&nbsp;&nbsp;</a>
+            <span shiro:hasRole="admin"><i class="am-icon-book"></i><a href="/editor">写博客</a></span>
+        </h1>
+        <!--手机端适配-->
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+                data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span
+                class="am-icon-bars"></span></button>
+
+        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+
+            <ul class="am-nav am-nav-pills am-topbar-nav" style="padding-left: 255px;">
+                <li class=""><a href="/index"><span class="am-icon-home"></span>首页</a></li>
+                <!--            <li class="am-dropdown">-->
+                <!--                <a>技术专题</a>-->
+                <!--            </li>-->
+                <li><a href="/archive"><span class="am-icon-archive"/>归档</a></li>
+                <li><a href="/update"><span class="am-icon-calendar-plus-o"/>更新</a></li>
+
+                <li><a href="/guest"><span class="am-icon-pencil"/>留言板</a></li>
+                <li><a href="/friend"><span class="am-icon-link"></span>友链</a></li>
+                <li><a><span class="am-icon-user"></span>关于我</a></li>
+                <li shiro:hasRole="admin">
+                    <a href="/admin"><span>网站管理</span></a>
+                </li>
+            </ul>
+
+            <div class="topbar-right" shiro:notAuthenticated="">
+                <div class="am-topbar-right">
+                    <a href="/login" class="am-topbar-brand am-kai">登入</a>
+                </div>
+                <div class="am-topbar-right">
+                    <a href="/register" class="am-topbar-brand am-kai">注册</a>
+                </div>
+
+            </div>
+            <div class="am-topbar-right user">
+                <label><shiro:principal property="username"/> </label>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-level"></div>
+</div>
+
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/amazeui.js"></script>
+    <script>
+
+        $.get("isLogin",function (data) {
+            if (data.status==200){
+                $(".topbar-right").css("display","none");
+                join()
+                $(".out").click(function () {
+                    alert("退出成功")
+                    logout();
+                })
+            }else{
+                $(".topbar-right").css("display");
+                $(".user").empty();
+            }
+        })
+
+
+        function logout() {
+            $.get("logout",function () {
+
+            })
+        }
+        function join() {
+            var content =
+                '                <div class="am-btn-group">\n' +
+                '                    <div class="am-dropdown" data-am-dropdown>\n' +
+                '                        <button class="am-btn am-btn-group am-dropdown-toggle" data-am-dropdown-toggle> <span class="am-icon-caret-down"></span></button>\n' +
+                '                        <ul class="am-dropdown-content">\n' +
+                '                            <li><a href="/user">用户信息</a></li>\n' +
+                '                            <li><a class="out" href="">退出登入</a></li>\n' +
+                '                        </ul>\n' +
+                '                    </div>\n' +
+                '                </div>'
+            $(".user").append(content);
+        }
+    </script>
+</div>
+
+</body>
+</html>

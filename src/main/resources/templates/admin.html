@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="assets/css/amazeui.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="source/css/admin1.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/amazeui.js"></script>
+    <script src="source/js/admin.js"></script>
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+<div th:replace="header::header"></div>
+
+<div class="am-cf admin-main" style="padding-top: 0">
+<!--侧边栏-->
+    <div class="am-offcanvas admin-sidebar" id="am-offcanvas-b">
+        <div class="am-offcanvas-bar admin-offcanvas-bar">
+            <ul class="am-list admin-sidebar-list">
+
+                <li class="web-info ac"><a href="#"><span class="am-icon-file"></span>网站信息
+                    <span class="am-icon-angle-right am-margin-right am-fr"></span></a></li>
+
+                 <li class="u-info"><a href="#"><span class="am-icon-cog"></span>用户信息
+                     <span class="am-icon-angle-right am-margin-right am-fr"></span></a></li>
+
+                 <li class="blog-manager"><a href="#"><span class="am-icon-comment"></span>博客管理
+                     <span class="am-icon-angle-right am-margin-right am-fr"></span></a></li>
+
+            </ul>
+
+            <div class="am-panel am-panel-default admin-sidebar-panel">
+                <div class="am-panel-bd">
+                    <p><span class="am-icon-bookmark"></span>公告</p>
+                    <p>全世界最幸福得童话,是与你一起度过柴米油盐岁月</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<!--内容数据-->
+    <div class="admin-content">
+        <div id="web-info">
+            <div class="">
+                <table class="am-table">
+                    <thead>
+                    <tr>
+                        <th>id</th><th>名称</th><th>描述</th><th>url</th><th>头像地址</th>
+                    </tr>
+                    </thead>
+                    <tbody class="friendMessage">
+
+                    </tbody>
+                </table>
+                <input type="text" placeholder="输入名称">
+                <input type="text" placeholder="描述">
+                <input type="text" placeholder="url">
+                <input type="text" placeholder="头像地址">
+                <button class="am-btn am-btn-default friend-submit">提交</button>
+            </div>
+        </div>
+
+        <div id="users-info">
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">用户管理</strong>
+                    <small>users information</small>
+                </div>
+            </div>
+            <div class="am-g">
+                <div class="am-u-sm-12 am-u-md-12">
+                    <div class="am-form">
+                        <table class="am-table">
+                            <thead>
+                            <tr>
+                                <th>ID</th><th>用户</th><th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="userMessage">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="kyx-page" id="more-page"></div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+
+        <div id="blog-info">
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">博客管理</strong>
+                    <small>blog information</small>
+                </div>
+            </div>
+            <hr/>
+            <div class="am-g comment">
+                <div class="am-u-sm-12 am-u-md-12">
+                    <div class="am-form">
+                        <table class="am-table am-table-striped am-table-hover table-main">
+                            <thead>
+                            <tr>
+                                <th class="table-id">ID</th><th class="table-title">博客名</th><th class="table-date am-hide-sm-only">创建时间</th><th class="table-set">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="blogMessage">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="kyx-blog-page" id="page-blog" style="text-align: right">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu " style="position: fixed;z-index: 10;bottom: 30px;right: 20px" data-am-offcanvas="{target:'#am-offcanvas-b'}"></a>
+
+</body>
+</html>

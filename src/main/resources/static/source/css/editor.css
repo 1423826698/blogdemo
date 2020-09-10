@@ -1,0 +1,110 @@
+.notice-box{
+    display: none;
+    position: fixed;
+    bottom: 56px;
+    left: 50%;
+    transform: translateX(-55%);
+    padding: 16px 40px;
+    border-radius: 4px;
+    background: rgba(63,63,63,0.9);
+    box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.33);
+    line-height: 24px;
+    font-size: 16px;
+    color: #fff;
+    z-index: 9999;
+}
+.kyx-editor-input{
+    margin: 10px 30px 13px 30px;
+}
+.kyx-editor-title{
+    width: 90%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    color: #4f4f4f;
+    display: inline-block;
+    box-shadow:0px 1px 13px 0.9px #aaa;
+    border-radius: 10px;
+}
+.publish{
+    display: inline-block;
+    margin-left: 15px;
+    border-radius: 7px;
+}
+.article-tag .article-type{
+    padding: 10px 20px 10px;
+}
+.row{
+    text-align: left;
+}
+.tags,.tag,.tag-line,.type.categories{
+    display: inline-block;
+}
+
+.publish-tag{
+    display: inline-block;
+    font-weight: 400;
+}
+.add-Tag{
+
+    display: inline-block;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: #348edf;
+    font-size: 14px;
+    line-height: 32px;
+}
+.required{
+    margin-left: 2px;
+    font-size: 12px;
+    color: #ca0c16;
+}
+.grade,.type,.categories{
+    display: inline-block;
+}
+.surePublish{
+
+}
+#select-categories,#select-grade,#select-type{
+    margin-left: 8px;
+    width: 138px;
+    height: 32px;
+    background: #fafafa;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+
+}
+#originalAuthor{
+    margin-left: 8px;
+    width: 138px;
+    height: 32px;
+    background: #fafafa;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+.tag-value{
+    margin-top: 8px;
+    margin-left: 5px;
+    padding: 3px 8px;
+    font-size: 12px;
+    max-width: 480px;
+    background: #e9e9e9;
+    border-radius: 2px;
+    line-height: 15px;
+    height: 18px;
+    color: #4f4f4f;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 0;
+    transform: translateY(5px);
+}
+.am-icon-remove:hover{
+    color: red;
+    transition: 0.5s;
+}

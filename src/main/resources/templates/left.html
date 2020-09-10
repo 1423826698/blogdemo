@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="left">
+    <div class="widget" style="margin: 23px">
+        <div class="bg-danger">
+            <div class="zhy-info">
+                <i class="am-icon-quote-left" style="float: left"></i><br>
+                <div style="text-align: center">
+                    <p>离别时为了更好的相遇</p>
+                    <p>放手是为了再次握的紧些</p>
+                    <p>我喜欢就好</p>
+                    <p>我没有很好</p>
+                    <p>你不嫌弃就好</p>
+                    <p style="text-align: right;padding-top: 10px">--- 网易热评</p>
+                </div>
+                <i class="am-icon-quote-right" style="float: right"></i>
+                <div style="text-align: center">
+                    <p><strong>Welcome to my blog(゜-゜)つロ 干杯~</strong></p>
+                    <p style="line-height: 25px">平淡对待一切<br>努力做最好的自己</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="kyx-list">
+        <div>
+            <h5 style="margin: 5%">
+                <i class="am-icon-info"></i>
+                <strong style="margin-left: 5px">网站信息</strong>
+            </h5>
+            <hr>
+            <ul class="site-default">
+                <li>
+                    <i class="am-icon-file"></i>
+                    <span>文章总数</span>：<span class="articleCount"></span> 篇
+                </li>
+                <li>
+                    <i class="am-icon-tags"></i>
+                    <span>标签总数</span>：<span class="labelsCount"></span> 个
+                </li>
+                <li>
+                    <i class="am-icon-comments"></i>
+                    <span>留言总数</span>：<span class="guestCount"></span> 条
+                </li>
+                <li>
+                    <i class="am-icon-calendar-check-o"></i>
+                    <span>网站运行天数</span>：<span class="siteRunningTime"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

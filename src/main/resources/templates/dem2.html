@@ -1,0 +1,156 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<div th:fragment="live2d">
+    <div id="waifu">
+        <div id="waifu-tips"></div>
+        <canvas id="live2d" width="300" height="500"></canvas>
+        <div id="kyx-tool">
+            <span class="fa fa-lg fa-comment"></span>
+            <span class="fa fa-lg fa-paper-plane"></span>
+            <span class="fa fa-lg fa-camera-retro"></span>
+            <span class="fa fa-lg fa-info-circle"></span>
+            <span class="fa fa-lg fa-times"></span>
+        </div>
+    </div>
+    <script>
+        function loadWidget() {
+            localStorage.removeItem("waifu-display");
+            sessionStorage.removeItem("waifu-text");
+            //         document.body.insertAdjacentHTML("beforeend", `<div id="waifu">
+            // 	<div id="waifu-tips"></div>
+            // 	<canvas id="live2d" width="300" height="500"></canvas>
+            // 	<div id="kyx-tool">
+            // 		<span class="fa fa-lg fa-comment"></span>
+            // 		<span class="fa fa-lg fa-paper-plane"></span>
+            // 		<span class="fa fa-lg fa-camera-retro"></span>
+            // 		<span class="fa fa-lg fa-info-circle"></span>
+            // 		<span class="fa fa-lg fa-times"></span>
+            // 	</div>
+            // </div>`);
+            setTimeout(() => {
+                document.getElementById("waifu").style.bottom = 0;
+            }, 0);
+            function randomSelection(obj) {
+                return Array.isArray(obj) ? obj[Math.floor(Math.random() * obj.length)] : obj;
+            }
+            // 检测用户活动状态，并在空闲时显示消息
+            let userAction = false,
+                userActionTimer,
+                messageTimer,
+                i=0,
+                messageArray = ["好久不见，日子过得好快呢……", "大坏蛋！你都多久没理人家了呀，嘤嘤嘤～", "嗨～快来逗我玩吧！", "拿小拳拳锤你胸口！", "记得把小家加入 Adblock 白名单哦！"];
+            window.addEventListener("mousemove", () => userAction = true);
+            window.addEventListener("keydown", () => userAction = true);
+            setInterval(() => {
+                if (userAction) {
+                    userAction = false;
+                    clearInterval(userActionTimer);
+                    userActionTimer = null;
+                } else if (!userActionTimer) {
+                    userActionTimer = setInterval(() => {
+                        showMessage(randomSelection(messageArray), 6000, 9);
+                    }, 20000);
+                }
+            }, 1000);
+            (function registerEventListener() {
+                document.querySelector("#live2d").addEventListener("click",()=>{
+                    let messay =['请不要这样','不要动手动脚的请把手拿开','我要报警了','再摸我就要报警了','喂110么'];
+                    showMessage(messay[i],5000,9);
+                    i++;
+                    if (i>4){
+                        i=0;
+                    }
+                });
+
+                document.querySelector("#kyx-tool .fa-comment").addEventListener("click", showHitokoto);
+                document.querySelector("#kyx-tool .fa-paper-plane").addEventListener("click", () => {
+                    if (window.Asteroids) {
+                        if (!window.ASTEROIDSPLAYERS) window.ASTEROIDSPLAYERS = [];
+                        window.ASTEROIDSPLAYERS.push(new Asteroids());
+                    } else {
+                        const script = document.createElement("script");
+                        script.src = "https://cdn.jsdelivr.net/gh/stevenjoezhang/asteroids/asteroids.js";
+                        document.head.appendChild(script);
+                    }
+                });
+                document.querySelector("#kyx-tool .fa-camera-retro").addEventListener("click", () => {
+                    showMessage("照好了嘛，是不是很可爱呢？", 6000, 9);
+                    Live2D.captureName = "photo.png";
+                    Live2D.captureFrame = true;
+                });
+                document.querySelector("#kyx-tool .fa-info-circle").addEventListener("click", () => {
+                    open("https://www.tclba.xyz");
+                });
+                document.querySelector("#kyx-tool .fa-times").addEventListener("click", () => {
+                    localStorage.setItem("waifu-display", Date.now());
+                    showMessage("愿你有一天能与重要的人重逢。", 2000, 11);
+                    document.getElementById("waifu").style.bottom = "-500px";
+                    setTimeout(() => {
+                        document.getElementById("waifu").style.display = "none";
+                        document.getElementById("waifu-toggle").classList.add("waifu-toggle-active");
+                    }, 3000);
+                });
+                const devtools = () => {};
+                console.log("%c", devtools);
+                devtools.toString = () => {
+                    showMessage("哈哈，你打开了控制台，是想要看看我的小秘密吗？", 6000, 9);
+                };
+                window.addEventListener("copy", () => {
+                    showMessage("你都复制了些什么呀，转载要记得加上出处哦！", 6000, 9);
+                });
+                window.addEventListener("visibilitychange", () => {
+                    if (!document.hidden) showMessage("哇，你终于回来了～", 6000, 9);
+                });
+            })();
+            function showHitokoto() {
+                // 增加 hitokoto.cn 的 API
+                fetch("https://v1.hitokoto.cn")
+                    .then(response => response.json())
+                    .then(result => {
+                        const text = `这句一言来自 <span>「${result.from}」</span>，是 <span>${result.creator}</span> 在 hitokoto.cn 投稿的。`;
+                        showMessage(result.hitokoto, 6000, 9);
+                        setTimeout(() => {
+                            showMessage(text, 4000, 9);
+                        }, 6000);
+                    });
+            }
+
+            function showMessage(text, timeout, priority) {
+                if (!text || (sessionStorage.getItem("waifu-text") && sessionStorage.getItem("waifu-text") > priority)) return;
+                if (messageTimer) {
+                    clearTimeout(messageTimer);
+                    messageTimer = null;
+                }
+                text = randomSelection(text);
+                sessionStorage.setItem("waifu-text", priority);
+                const tips = document.getElementById("waifu-tips");
+                tips.innerHTML = text;
+                tips.classList.add("waifu-tips-active");
+                messageTimer = setTimeout(() => {
+                    sessionStorage.removeItem("waifu-text");
+                    tips.classList.remove("waifu-tips-active");
+                }, timeout);
+            }
+            loadModel();
+            async function loadModel() {
+                showMessage(messageArray[2], 4000, 10);
+                loadlive2d("live2d", '1/index.json');
+            }
+        }
+        loadWidget();
+
+
+
+    </script>
+</div>
+
+
+</body>
+</html>

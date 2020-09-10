@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>文章展示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="source/css/show.css">
+    <link rel="stylesheet" href="editor.md-master/css/editormd.preview.min.css">
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="editor.md-master/jquery.min.js"></script>
+    <script src="editor.md-master/editormd.min.js" charset="utf-8"></script>
+    <script src="editor.md-master/lib/marked.min.js"></script>
+    <script src="https://lib.baomitu.com/prettify/r298/prettify.min.js"></script>
+    <script src="https://lib.baomitu.com/raphael/2.2.7/raphael.min.js"></script>
+    <script src="https://lib.baomitu.com/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="https://lib.baomitu.com/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+    <script src="https://lib.baomitu.com/flowchart/1.11.3/flowchart.min.js"></script>
+    <script src="editor.md-master/lib/jquery.flowchart.min.js"></script>
+
+
+    <script src="assets/js/amazeui.js"></script>
+    <script src="source/js/show.js"></script>
+<body>
+<!--首页-->
+<div th:replace="header::header"></div>
+
+<!--主体-->
+<div class="layui-row layui-col-space25">
+
+
+        <div class="layui-row layui-container">
+            <div class="kyx-session-content">
+                <div class="kyx-art">
+                    <div class="kyx-article-top">
+                        <div class="article-top"></div>
+                        <div class="article-info"></div>
+                    </div>
+                    <div class="kyx-article-content">
+                        <div id="wordsView" class="kyx-markerdown">
+                            <textarea style="display: none" id="mdText" name="editormd-markdown-doc"></textarea>
+                        </div>
+                    </div>
+                    <div class="kyx-article-bottom"></div>
+                </div>
+            </div>
+            <div class="article-comment">
+                <div class="comment">
+                    <p style="text-align: center">评论功能暂在维护，下次升级</p>
+                </div>
+            </div>
+        </div>
+
+
+</div>
+
+
+</body>
+
+
+
+</html>

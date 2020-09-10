@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blog</title>
+
+<link rel="stylesheet" href="assets/css/amazeui.min.css">
+<link rel="stylesheet" href="source/css/index.css">
+<link rel="stylesheet" href="editor.md-master/css/editormd.css">
+<link rel="stylesheet" href="editor.md-master/css/editormd.preview.min.css">
+<link rel="stylesheet" href="source/css/editor.css">
+</head>
+<body id="kyx">
+    <div id="d">
+<!--头部-->
+    <header class="am-topbar">
+        <div class="am-u-sm-7 am-u-md-4">
+            <h1 class="am-topbar-brand">
+                <img src="source/image/tx.jpg">
+                <a href="/" class="am-kai">博客</a>
+            </h1>
+        </div>
+        <div class="am-u-sm-12 am-u-md-4">
+            <h1 class="am-topbar-brand am-kai" style="font-size: 19px">
+                工作室
+            </h1>
+        </div>
+
+        <!--<div class="am-topbar-right">
+            <div class="am-dropdown" >
+                <button class="am-btn am-topbar-btn am-btn-sm am-dropdown-toggle"
+                    >
+                    <span class=""></span>
+                    <span class="am-icon-caret-down"></span>
+                </button>
+
+                <ul class="am-dropdown-content">
+                    <li><a href="#">个人主页</a></li>
+                    <li><a href="#">网站后台管理</a></li>
+                    <li>消息</li>
+                    <li>反馈</li>
+                    <hr style="margin: 10px 0 5px 0;">
+                    <li>退出登入</li>
+                </ul>
+            </div>
+        </div>-->
+
+    </header>
+
+      <div id="writeArticle">
+          <div class="kyx-editor">
+              <div class="kyx-editor-input">
+                  <input class="kyx-editor-title" type="text" placeholder="输入文章标题">
+                  <button type="button" class="publish am-btn am-btn-danger">发布博客</button>
+              </div>
+
+          </div>
+
+          <div class="kyx-editor-writing">
+            <!--MarkDown的id标志-->
+              <div id="my-editormd">
+                  <!--书写与实时显示的textarea-->
+                  <textarea id="content" name="content" style="display: none"></textarea>
+                  <!--用于后端获取md稳当内容，java中-->
+                  <textarea id="my-editormd-html-code" name="my-editormd-html-code" style="display: none"></textarea>
+              </div>
+          </div>
+
+          <div class="notice-box notice-box-title">
+              <i class="am-icon-exclamation-circle" style="color: red"></i>
+              <span>文章标题不能为空</span>
+          </div>
+          <div class="notice-box notice-box-content ">
+              <i class="am-icon-exclamation-circle" style="color: red"></i>
+                  <span>文章内容不能为空</span>
+          </div>
+
+      </div>
+
+    </div>
+
+<!--Modal-->
+    <div class="am-modal" tabindex="-1" id="my-alert">
+        <div class="am-modal-dialog" style="border-radius: 5px;">
+            <div class="am-modal-hd">
+                发布博客<a href="javascript:void (0)" class="am-close-alt am-close-spin" data-am-modal-close style="margin: 7px 10px auto auto;float: right">&times;</a>
+            </div>
+            <div class="am-modal-bd">
+                <div class="article-setting">
+                    <div class="article-tag row">
+                        <div class="tags">
+                            <div class="tag-line">
+                                <label class="publish-tag">文章标签<strong>:</strong></label>
+                                <div class="tag">
+
+                                </div>
+                                <button class="add-Tag">
+                                    <i class="am-icon-plus-circle"></i>
+                                    添加标签
+                                </button>
+                            </div>
+                            <span style="">最多添加5个标签</span>
+                        </div>
+                    </div>
+                    <div class="article-type row">
+                        <label class="publish-tag">文章类型<strong>:</strong></label>
+                        <div class="type">
+                            <select id="select-type">
+                                <option>请选择</option>
+                                <option>原创</option>
+                                <option>转载</option>
+                            </select>
+                            <span class="required">*</span>
+                        </div>
+                        <label class="publish-tag" style="">博客分类<strong>:</strong></label>
+                        <div class="categories">
+                            <select id="select-categories">
+                                <option value="请选择">请选择</option>
+                                <option value="面试">面试</option>
+                                <option value="心情窗口">心情窗口</option>
+                                <option value="程序录">程序录</option>
+                            </select>
+                            <span class="required">*</span>
+                        </div>
+                    </div>
+                    <div class="article-tag row">
+                        <label class="publish-tag">文章等级<strong>:</strong></label>
+                        <div class="grade">
+                            <select id="select-grade">
+                                <option value="choose" selected>请选择</option>
+                                <option value="1">☆</option>
+                                <option value="2">☆☆</option>
+                                <option value="3">☆☆☆</option>
+                                <option value="4">☆☆☆☆</option>
+                                <option value="5">☆☆☆☆☆</option>
+                            </select>
+                            <span class="required">*</span>
+                        </div>
+                    <div id="originalAuthorHide" style="display: inline-block">
+                        <label class="publish-tag" style="margin-left: 10px;display: inline-block">文章作者</label>
+                        <div class="originalAuthor" style="display: inline-block">
+                            <input type="text" id="originalAuthor" placeholder="请输入文章原作者">
+                            <span class="required">*</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="am-modal-footer">
+                <button type="button" class="am-btn-default am-btn am-round" data-am-modal-close="" style="margin-right:10px">取消</button>
+                <button type="button" class="surePublish am-btn am-btn-danger am-round" style="margin: 10px 15px 10px auto">发表博客</button>
+            </div>
+        </div>
+    </div>
+    <div class="am-modal" tabindex="-2" id="my-tag"></div>
+
+<script src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="assets/js/amazeui.js"></script>
+<script src="editor.md-master/editormd.js"></script>
+<script src="source/js/editor.js"></script>
+</body>
+</html>

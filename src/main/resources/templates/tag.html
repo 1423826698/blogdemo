@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="source/css/archive.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="source/js/tag.js"> </script>
+    <style type="text/css">
+        body{
+            background-color: white;
+
+        }
+        .am-topbar-brand img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 4px;
+            border-radius: 50%;
+        }
+        .node{
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 11px 0 0 -8px;
+            display: inline-block;
+            background-color: #37f14a;
+            float: left;
+            color: white;
+        }
+        .timeline-wrap{
+            border-left: 3px solid #eceff2;
+            margin-bottom: 50px;
+        }
+        .am-comment-bd i{
+            margin-right: 8px;
+            line-height: 2em;
+            font-size: 13px;
+        }
+        .timeline-title{
+            width: 50px;
+            height: 50px;
+            background-color: #b0b0b0;
+            border-radius: 50%;
+            margin-left: -26px;
+
+        }
+        .title-icon{
+            margin-left: 17px;
+            margin-top: 12px;
+            color: #37f14a;
+            display: inline-block;
+        }
+        .all-tag{
+            display: inline-block;
+            float: left;
+        }
+        .tag-title{
+            text-align: center;
+        }
+        .timeline-row-major{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="header::header"></div>
+<div id="main">
+    <div class="am-container">
+        <div class="am-g">
+
+            <div class="site-inner">
+                <p class="tag-title"></p>
+                <div class="allTags">
+                    <div class="timeline-wrap">
+                        <div class="timeline-title">
+                        <span class="am-icon-tags title-icon"></span>
+                        </div>
+<!--                        <div class="timeline-row-major">-->
+<!--                            <span class="node am-animation-slide-top am-animation-delay-1"></span>-->
+<!--                            <div class="am-comment-main am-animation-slide-top am-animation-delay-1">-->
+<!--                                <header class="am-comment-hd">-->
+<!--                                    <div class="am-comment-meta">-->
+<!--                                        <a href="">2019春招-字节跳动面试</a>-->
+<!--                                    </div>-->
+<!--                                </header>-->
+<!--                                <div class="am-comment-bd">-->
+<!--                                    <i class="am-icon-calendar">2020-8-23</i>-->
+<!--                                    <i class="am-icon-tag">ok</i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+                <div id="my-id"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

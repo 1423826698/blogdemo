@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户</title>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="source/css/user.css">
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="source/js/user.js"></script>
+</head>
+<body>
+<div th:replace="header::header">
+</div>
+
+<!--页面主体内容-->
+<div class="am-cf admin-main" style="padding-top: 0">
+    <!-- sidebar start -->
+    <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+        <div class="am-offcanvas-bar admin-offcanvas-bar">
+            <ul class="am-list admin-sidebar-list qz-ul-a">
+                <li class="list-item guestSet" ><a style="cursor: pointer;"><span
+                        class="am-icon-pencil-square-o am-icon-commenting"></span>我的留言 <span
+                        class="am-icon-angle-right am-fr am-margin-right"></span></a></li>
+
+                <li class="list-item commeSet"><a style="cursor: pointer;"><span class="am-icon-comments"></span>我的评论 <span
+                        class="am-icon-angle-right am-fr am-margin-right"></span></a></li>
+
+
+            </ul>
+
+            <div class="am-panel am-panel-default admin-sidebar-panel">
+                <div class="am-panel-bd">
+                    <p><span class="am-icon-bookmark"></span> 公告</p>
+                    <p>现在不乘风破浪，更待何时？—— kyx</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- content start -->
+    <div class="admin-content">
+
+        <div id="user-info">
+                <label style="color: #0e90d2; margin-left: 17px;margin-top: 10px">
+                    用户/
+                </label>
+        </div>
+
+        <div id="guestSet" style="padding-bottom: 70px;">
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">我的留言</strong> /
+                    <small>replay information</small>
+                </div>
+            </div>
+            <hr/>
+            <div class="am-g comment">
+                <div class="am-u-sm-12 am-u-md-12">
+                    <div class="am-cf" >
+                        <span>未读消息：8</span>
+                        <a class="fr1 data-me">清空所有消息</a>
+                        <span class="line fr"></span>
+                        <a class="fr data-me" >全部标记为已读</a>
+                    </div>
+                    <div class="data-list">
+                        <ul>
+                            <li>
+                                <i class="data-cricle"></i>
+                                <span class="msg-type">留言</span>
+                                <span class="msg-title">
+                                    <a target="_blank" href="">
+                                        weixin_41393782
+                                    </a>
+                                    给你留了言
+                                </span>
+
+                                <p class="msg-text">
+                                    <span data-v-0947769e="" class="bb-span-wrap">
+                                        <a href="/#">
+
+                                        </a>
+                                    </span>
+                                    <em class="fr" style="color: #cccccc;">
+                                        2019-07-11
+                                    </em>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="commeSet" style="padding-bottom: 70px;">
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">我的评论</strong> /
+                    <small>comment information</small>
+                </div>
+            </div>
+            <hr/>
+            <div class="am-g comment">
+                <table class="am-table am-table-striped am-table-hover table-main">
+                    <thead>
+                    <tr>
+                        <th class="table-id">ID</th><th class="table-title">留言信息</th><th class="table-date am-hide-sm-only">创建时间</th><th class="table-set">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="blogMessage">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="notice notice-box-suc">
+        <i class="am-icon-exclamation-circle"></i>
+        <span> 客官,修改成功</span>
+    </div>
+    <div class="notice notice-box notice-box1">
+        <i class="am-icon-exclamation-circle"></i>
+        <span> 客官,修改失败</span>
+    </div>
+    <div class="notice notice-box notice-name-len">
+        <i class="am-icon-exclamation-circle"></i>
+        <span> 客官,名字格式不对</span>
+    </div>
+    <div class="notice notice-box notice-email">
+        <i class="am-icon-exclamation-circle"></i>
+        <span> 客官,邮箱格式不对</span>
+    </div>
+    <div class="notice notice-box notice-qq">
+        <i class="am-icon-exclamation-circle"></i>
+        <span> 客官,QQ格式不对</span>
+    </div>
+</div>
+</body>
+</html>
